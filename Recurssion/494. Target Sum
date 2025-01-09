@@ -1,0 +1,23 @@
+// dones using recursion, do it with DP later
+
+class Solution {
+
+    int count=0; 
+    public int findTargetSumWays(int[] nums, int target) {
+        ans(nums,0,0,target);
+        return count;
+    }
+
+    void ans(int[] nums,int i,int sum, int target){
+        if(i ==nums.length){ //check only when it has reached last digit
+            if(sum==target) count++;
+            
+        }else{
+
+            ans(nums, i+1, sum+ nums[i],target);
+            ans(nums, i+1, sum-nums[i], target);
+        }
+
+
+    }
+}
